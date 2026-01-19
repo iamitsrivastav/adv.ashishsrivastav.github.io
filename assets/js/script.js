@@ -1,3 +1,30 @@
+// Mobile Menu Toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuToggle.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".header")) {
+      menuToggle.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  });
+}
+
 // Testimonial Slider with smooth transitions
 const testimonialSlider = (() => {
   const testimonials = document.querySelectorAll(".testimonial");
