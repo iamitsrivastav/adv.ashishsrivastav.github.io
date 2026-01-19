@@ -2,45 +2,189 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Georgia', serif;
 }
 
 body {
-  background-color: #f8f9fa;
-  color: #222;
+  font-family: 'Inter', sans-serif;
+  background: #0e0e11;
+  color: #eaeaea;
 }
 
 .header {
-  background: #0a1f44;
-  padding: 15px 40px;
-}
-
-.navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 20px 60px;
+  background: #0b0b0d;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar a {
-  color: #fff;
+.header a {
+  color: #c9a24d;
+  margin-left: 20px;
   text-decoration: none;
-  font-weight: 500;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #c9a24d;
 }
 
 .hero {
-  padding: 80px;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.hero-buttons a {
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #c9a24d;
+  color: black;
+}
+
+.btn-outline {
+  border: 1px solid #c9a24d;
+  color: #c9a24d;
+}
+
+.section {
+  padding: 80px 60px;
   text-align: center;
 }
 
+.dark {
+  background: #15151a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  border: 1px solid #2b2b2f;
+  border-radius: 12px;
+}
+
+.achievements {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.achievements li {
+  margin: 10px 0;
+}
+
+.testimonial {
+  display: none;
+  font-style: italic;
+  max-width: 600px;
+  margin: auto;
+}
+
+.testimonial.active {
+  display: block;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #c9a24d;
+  border: none;
+  font-weight: bold;
+}
+
+.whatsapp a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #25d366;
+}
+
 .footer {
-  background: #0a1f44;
-  color: white;
+  padding: 20px;
   text-align: center;
-  padding: 15px;
+  background: #0b0b0d;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
+
+/* Animations */
+.section, .card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
 }

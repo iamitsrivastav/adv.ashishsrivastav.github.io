@@ -2,34 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Advocate Name | Portfolio</title>
+  <title>Contact | Adv. Ashish Srivastav</title>
+  <meta name="description" content="Contact Adv. Ashish Srivastav for professional legal consultation, case evaluation, and legal advisory services.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <nav class="navbar">
-    <div class="logo">Advocate Name</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="media.html">Media</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div class="logo">Adv. Ashish Srivastav</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="media.html">Media</a>
+    <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
 
-<main>
-  <section class="hero">
-    <h1>Experienced Legal Advocate</h1>
-    <p>Professional legal representation with integrity and excellence.</p>
-  </section>
-</main>
+<!-- HERO -->
+<section class="hero small">
+  <h1>Contact & Consultation</h1>
+  <p>Professional legal guidance begins with a confidential consultation.</p>
+</section>
 
+<!-- CONTACT INFO -->
+<section class="section">
+  <h2>Get in Touch</h2>
+  <p>
+    For legal consultation, case evaluation, or professional legal advice,
+    please use the contact details or submit the form below.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>📍 Office Address</h3>
+      <p>Prayagraj, Uttar Pradesh, India</p>
+    </div>
+
+    <div class="card">
+      <h3>📞 Phone</h3>
+      <p>+91-XXXXXXXXXX</p>
+    </div>
+
+    <div class="card">
+      <h3>📧 Email</h3>
+      <p>contact@advashishsrivastav.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section dark">
+  <h2>Request a Consultation</h2>
+
+  <!-- FORM SPREE INTEGRATION -->
+  <form 
+    class="contact-form"
+    action="https://formspree.io/f/YOUR_FORM_ID"
+    method="POST"
+  >
+    <input type="text" name="name" placeholder="Your Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="phone" placeholder="Phone Number (Optional)">
+    <textarea name="message" placeholder="Briefly describe your legal matter" required></textarea>
+
+    <button type="submit">Submit Consultation Request</button>
+  </form>
+
+  <p style="margin-top:15px; font-size:14px; opacity:0.8;">
+    *All communications are treated as strictly confidential.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Office Location</h2>
+
+  <div style="max-width:900px; margin:auto;">
+    <iframe 
+      src="YOUR_GOOGLE_MAP_EMBED_URL"
+      width="100%" 
+      height="350" 
+      style="border:0; border-radius:12px;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+
+<!-- WHATSAPP CTA -->
+<section class="section">
+  <h2>Quick Consultation</h2>
+  <p>If you prefer instant communication, you may contact directly via WhatsApp.</p>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank">
+      💬 Consult via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 Advocate Name. All Rights Reserved.</p>
+  © 2026 Adv. Ashish Srivastav. All Rights Reserved.
 </footer>
+
+<a 
+  href="https://wa.me/91XXXXXXXXXX" 
+  class="whatsapp-float" 
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  💬
+</a>
+
 
 </body>
 </html>
