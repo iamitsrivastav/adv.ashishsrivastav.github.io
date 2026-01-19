@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #222;
+}
+
+.header {
+  background: #0a1f44;
+  padding: 15px 40px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  padding: 80px;
+  text-align: center;
+}
+
+.footer {
+  background: #0a1f44;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
