@@ -90,11 +90,49 @@
 <section class="section" id="contact">
   <h2>Request a Consultation</h2>
 
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea placeholder="Your Legal Query" required></textarea>
-    <button type="submit">Submit Request</button>
+  <form class="contact-form" novalidate>
+    <div class="form-group">
+      <label for="home-name">Your Name <span aria-label="required">*</span></label>
+      <input 
+        type="text" 
+        id="home-name"
+        required
+        minlength="2"
+        maxlength="100"
+        aria-required="true"
+        aria-describedby="home-name-error"
+      >
+      <span id="home-name-error" class="form-error" role="alert"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="home-email">Email Address <span aria-label="required">*</span></label>
+      <input 
+        type="email" 
+        id="home-email"
+        required
+        aria-required="true"
+        aria-describedby="home-email-error"
+      >
+      <span id="home-email-error" class="form-error" role="alert"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="home-query">Your Legal Query <span aria-label="required">*</span></label>
+      <textarea 
+        id="home-query"
+        required
+        minlength="10"
+        maxlength="1000"
+        rows="5"
+        aria-required="true"
+        aria-describedby="home-query-hint home-query-error"
+      ></textarea>
+      <span id="home-query-hint" class="form-hint">Minimum 10 characters</span>
+      <span id="home-query-error" class="form-error" role="alert"></span>
+    </div>
+
+    <button type="submit" aria-label="Submit consultation request">Submit Request</button>
   </form>
 
   <div class="whatsapp">

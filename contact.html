@@ -66,13 +66,67 @@
     class="contact-form"
     action="https://formspree.io/f/YOUR_FORM_ID"
     method="POST"
+    novalidate
   >
-    <input type="text" name="name" placeholder="Your Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="text" name="phone" placeholder="Phone Number (Optional)">
-    <textarea name="message" placeholder="Briefly describe your legal matter" required></textarea>
+    <div class="form-group">
+      <label for="name">Your Full Name <span aria-label="required">*</span></label>
+      <input 
+        type="text" 
+        id="name"
+        name="name" 
+        required
+        minlength="2"
+        maxlength="100"
+        aria-required="true"
+        aria-describedby="name-error"
+      >
+      <span id="name-error" class="form-error" role="alert"></span>
+    </div>
 
-    <button type="submit">Submit Consultation Request</button>
+    <div class="form-group">
+      <label for="email">Email Address <span aria-label="required">*</span></label>
+      <input 
+        type="email" 
+        id="email"
+        name="email" 
+        required
+        aria-required="true"
+        aria-describedby="email-error"
+      >
+      <span id="email-error" class="form-error" role="alert"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number <span class="optional">(Optional)</span></label>
+      <input 
+        type="tel" 
+        id="phone"
+        name="phone" 
+        pattern="[0-9\+\-\s\(\)]{0,20}"
+        maxlength="20"
+        aria-describedby="phone-hint phone-error"
+      >
+      <span id="phone-hint" class="form-hint">Format: +91-XXXXXXXXXX or (XXX) XXX-XXXX</span>
+      <span id="phone-error" class="form-error" role="alert"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Describe Your Legal Matter <span aria-label="required">*</span></label>
+      <textarea 
+        id="message"
+        name="message" 
+        required
+        minlength="10"
+        maxlength="1000"
+        rows="6"
+        aria-required="true"
+        aria-describedby="message-hint message-error"
+      ></textarea>
+      <span id="message-hint" class="form-hint">Please provide at least 10 characters</span>
+      <span id="message-error" class="form-error" role="alert"></span>
+    </div>
+
+    <button type="submit" aria-label="Submit consultation request">Submit Consultation Request</button>
   </form>
 
   <p style="margin-top:15px; font-size:14px; opacity:0.8;">
@@ -114,7 +168,7 @@
 </footer>
 
 <a 
-  href="https://wa.me/91XXXXXXXXXX" 
+  href="https://wa.me/918318650588" 
   class="whatsapp-float" 
   target="_blank"
   aria-label="Chat on WhatsApp"
