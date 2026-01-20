@@ -95,12 +95,15 @@
 <section class="section" id="contact">
   <h2>Request a Consultation</h2>
 
-  <form class="contact-form" novalidate>
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+    <input type="hidden" name="access_key" value="23af64b2-7dab-45d8-8072-760a7debf3ce">
+    
     <div class="form-group">
       <label for="home-name">Your Name <span aria-label="required">*</span></label>
       <input 
         type="text" 
         id="home-name"
+        name="name"
         required
         minlength="2"
         maxlength="100"
@@ -115,6 +118,7 @@
       <input 
         type="email" 
         id="home-email"
+        name="email"
         required
         aria-required="true"
         aria-describedby="home-email-error"
@@ -126,6 +130,7 @@
       <label for="home-query">Your Legal Query <span aria-label="required">*</span></label>
       <textarea 
         id="home-query"
+        name="message"
         required
         minlength="10"
         maxlength="1000"

@@ -66,13 +66,15 @@
 <section class="section dark">
   <h2>Request a Consultation</h2>
 
-  <!-- FORM SPREE INTEGRATION -->
+  <!-- WEB3FORM INTEGRATION -->
   <form 
     class="contact-form"
-    action="https://formspree.io/f/YOUR_FORM_ID"
+    action="https://api.web3forms.com/submit"
     method="POST"
     novalidate
   >
+    <input type="hidden" name="access_key" value="23af64b2-7dab-45d8-8072-760a7debf3ce">
+    
     <div class="form-group">
       <label for="name">Your Full Name <span aria-label="required">*</span></label>
       <input 
