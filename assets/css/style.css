@@ -471,7 +471,7 @@ body {
     font-size: 20px;
   }
 
-  .nav-menu {
+  .header .nav-menu {
     display: none;
     position: fixed;
     top: 60px;
@@ -483,11 +483,14 @@ body {
     background: var(--bg-secondary);
     border-left: 1px solid var(--border-color);
     z-index: 99;
-    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.4);
   }
 
-  .nav-menu.active {
+  .header .nav-menu.active {
     display: flex;
+    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-menu a {

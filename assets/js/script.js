@@ -2,15 +2,19 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
+if (menuToggle && navMenu) {
+  // Toggle menu on hamburger click
+  menuToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
   });
 
   // Close menu when a link is clicked
-  document.querySelectorAll(".nav-menu a").forEach(link => {
-    link.addEventListener("click", () => {
+  const navLinks = navMenu.querySelectorAll("a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
       menuToggle.classList.remove("active");
       navMenu.classList.remove("active");
     });
@@ -18,7 +22,19 @@ if (menuToggle) {
 
   // Close menu when clicking outside
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".header")) {
+    // Check if clicked element is inside menu or menu toggle
+    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      // If menu is open, close it
+      if (navMenu.classList.contains("active")) {
+        menuToggle.classList.remove("active");
+        navMenu.classList.remove("active");
+      }
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("active")) {
       menuToggle.classList.remove("active");
       navMenu.classList.remove("active");
     }
