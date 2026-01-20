@@ -127,26 +127,40 @@
     </div>
 
     <div class="form-group">
-      <label for="home-query">Your Legal Query <span aria-label="required">*</span></label>
+      <label for="home-phone">Phone Number <span class="optional">(Optional)</span></label>
+      <input 
+        type="tel" 
+        id="home-phone"
+        name="phone" 
+        pattern="[0-9\+\-\s\(\)]{0,20}"
+        maxlength="20"
+        aria-describedby="home-phone-hint home-phone-error"
+      >
+      <span id="home-phone-hint" class="form-hint">Format: +91-XXXXXXXXXX or (XXX) XXX-XXXX</span>
+      <span id="home-phone-error" class="form-error" role="alert"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="home-query">Describe Your Legal Matter <span aria-label="required">*</span></label>
       <textarea 
         id="home-query"
         name="message"
         required
         minlength="10"
         maxlength="1000"
-        rows="5"
+        rows="6"
         aria-required="true"
         aria-describedby="home-query-hint home-query-error"
       ></textarea>
-      <span id="home-query-hint" class="form-hint">Minimum 10 characters</span>
+      <span id="home-query-hint" class="form-hint">Please provide at least 10 characters</span>
       <span id="home-query-error" class="form-error" role="alert"></span>
     </div>
 
-    <button type="submit" aria-label="Submit consultation request">Submit Request</button>
+    <button type="submit" aria-label="Submit consultation request">Submit Consultation Request</button>
   </form>
 
   <div class="whatsapp">
-    <a href="https://wa.me/91XXXXXXXXXX" target="_blank">
+    <a href="https://wa.me/918318650588" target="_blank">
       💬 Consult via WhatsApp
     </a>
   </div>
@@ -157,7 +171,7 @@
 </footer>
 
 <a 
-  href="https://wa.me/91XXXXXXXXXX" 
+  href="https://wa.me/918318650588" 
   class="whatsapp-float" 
   target="_blank"
   aria-label="Chat on WhatsApp"

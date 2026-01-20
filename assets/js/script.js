@@ -116,7 +116,7 @@ const testimonialSlider = (() => {
   }
 })();
 
-// Form Validation
+// Form Validation & Web3Forms Success Handling
 const forms = document.querySelectorAll(".contact-form");
 
 forms.forEach(form => {
@@ -128,8 +128,22 @@ forms.forEach(form => {
     input.addEventListener("input", validateField);
   });
 
-  // Validate on submit
-  form.addEventListener("submit", handleSubmit);
+  // Handle form submission
+  form.addEventListener("submit", async (e) => {
+    const submitBtn = form.querySelector("button[type='submit']");
+    const originalText = submitBtn.textContent;
+    
+    // Validate before submit
+    const isFormValid = validateFormOnSubmit(form);
+    if (!isFormValid) {
+      e.preventDefault();
+      return;
+    }
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+  });
 });
 
 function validateField(event) {
@@ -160,8 +174,7 @@ function validateField(event) {
   field.setAttribute("aria-invalid", !field.validity.valid);
 }
 
-function handleSubmit(event) {
-  const form = event.target;
+function validateFormOnSubmit(form) {
   const inputs = form.querySelectorAll("input[required], textarea[required]");
   let isValid = true;
 
@@ -172,7 +185,5 @@ function handleSubmit(event) {
     }
   });
 
-  if (!isValid) {
-    event.preventDefault();
-  }
+  return isValid;
 }
