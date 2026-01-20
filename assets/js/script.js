@@ -143,6 +143,24 @@ forms.forEach(form => {
     // Show loading state
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
+    
+    // Wait for form submission
+    setTimeout(() => {
+      // Show success message
+      showFormSuccess(form);
+      
+      // Reset form after delay
+      setTimeout(() => {
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        
+        // Clear validation errors
+        form.querySelectorAll(".form-error").forEach(error => {
+          error.textContent = "";
+        });
+      }, 3000);
+    }, 500);
   });
 });
 
@@ -186,4 +204,25 @@ function validateFormOnSubmit(form) {
   });
 
   return isValid;
+}
+
+function showFormSuccess(form) {
+  const formSection = form.closest(".section");
+  const successMsg = document.createElement("div");
+  successMsg.className = "form-success";
+  successMsg.innerHTML = `
+    <div class="success-content">
+      <span class="success-icon">✓</span>
+      <h3>Thank You!</h3>
+      <p>Your consultation request has been received. We'll contact you shortly.</p>
+    </div>
+  `;
+  
+  // Insert after form
+  form.insertAdjacentElement("afterend", successMsg);
+  
+  // Remove after 5 seconds
+  setTimeout(() => {
+    successMsg.remove();
+  }, 5000);
 }

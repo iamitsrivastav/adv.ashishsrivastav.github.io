@@ -325,6 +325,15 @@ body {
   opacity: 1;
 }
 
+.testimonial-author {
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  color: var(--accent-gold);
+  margin-top: 12px;
+  font-weight: 500;
+}
+
 .contact-form {
   max-width: 500px;
   margin: auto;
@@ -443,10 +452,81 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+.form-success {
+  max-width: 500px;
+  margin: 20px auto 0;
+  padding: 24px;
+  background: rgba(52, 199, 89, 0.1);
+  border: 2px solid var(--success-color);
+  border-radius: 8px;
+  animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.success-content {
+  text-align: center;
+}
+
+.success-icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: var(--success-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 48px;
+  margin-bottom: 12px;
+}
+
+.form-success h3 {
+  color: var(--success-color);
+  margin: 12px 0 8px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.form-success p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
 .whatsapp a {
   display: inline-block;
   margin-top: 20px;
   color: #25d366;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background: rgba(201, 162, 77, 0.08);
+  transform: translateY(-2px);
+}
+
+.social-btn span {
+  font-size: 18px;
 }
 
 .footer {
@@ -468,7 +548,7 @@ body {
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .header .nav-menu {
@@ -733,6 +813,17 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
