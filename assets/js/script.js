@@ -1,6 +1,14 @@
 // Mobile Menu Toggle
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
+let navOverlay = document.querySelector(".nav-overlay");
+
+// Create overlay if it doesn't exist
+if (!navOverlay && menuToggle && navMenu) {
+  navOverlay = document.createElement("div");
+  navOverlay.className = "nav-overlay";
+  document.body.insertBefore(navOverlay, document.body.firstChild);
+}
 
 if (menuToggle && navMenu) {
   // Toggle menu on hamburger click
@@ -9,7 +17,17 @@ if (menuToggle && navMenu) {
     e.stopPropagation();
     menuToggle.classList.toggle("active");
     navMenu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
   });
+
+  // Close menu when overlay is clicked
+  if (navOverlay) {
+    navOverlay.addEventListener("click", () => {
+      menuToggle.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    });
+  }
 
   // Close menu when a link is clicked
   const navLinks = navMenu.querySelectorAll("a");
@@ -17,6 +35,7 @@ if (menuToggle && navMenu) {
     link.addEventListener("click", (e) => {
       menuToggle.classList.remove("active");
       navMenu.classList.remove("active");
+      document.body.classList.remove("menu-open");
     });
   });
 
@@ -28,6 +47,7 @@ if (menuToggle && navMenu) {
       if (navMenu.classList.contains("active")) {
         menuToggle.classList.remove("active");
         navMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
       }
     }
   });
@@ -37,6 +57,7 @@ if (menuToggle && navMenu) {
     if (e.key === "Escape" && navMenu.classList.contains("active")) {
       menuToggle.classList.remove("active");
       navMenu.classList.remove("active");
+      document.body.classList.remove("menu-open");
     }
   });
 }
