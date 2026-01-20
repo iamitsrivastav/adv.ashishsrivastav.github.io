@@ -1,3 +1,39 @@
+// Theme Toggle
+const themeToggle = document.querySelector(".theme-toggle");
+const allThemeToggles = document.querySelectorAll(".theme-toggle");
+const htmlElement = document.documentElement;
+
+// Load saved theme preference or default to dark
+const savedTheme = localStorage.getItem("theme") || "dark";
+if (savedTheme === "light") {
+  htmlElement.classList.add("light-theme");
+  updateThemeIcon("☀️");
+} else {
+  htmlElement.classList.remove("light-theme");
+  updateThemeIcon("🌙");
+}
+
+// Theme toggle click handler - works for all buttons
+allThemeToggles.forEach(toggle => {
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const isLightTheme = htmlElement.classList.toggle("light-theme");
+      updateThemeIcon(isLightTheme ? "☀️" : "🌙");
+      localStorage.setItem("theme", isLightTheme ? "light" : "dark");
+    });
+  }
+});
+
+function updateThemeIcon(icon) {
+  allThemeToggles.forEach(toggle => {
+    if (toggle.classList.contains("mobile-theme-toggle")) {
+      toggle.querySelector("span").textContent = icon;
+    } else {
+      toggle.textContent = icon;
+    }
+  });
+}
+
 // Mobile Menu Toggle
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");

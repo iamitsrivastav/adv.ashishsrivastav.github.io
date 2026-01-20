@@ -13,6 +13,22 @@
   --success-color: #34c759;
 }
 
+/* Light Theme - Sophisticated Professional Palette */
+html.light-theme {
+  --accent-gold: #b8860b;
+  --accent-gold-light: #daa520;
+  --accent-gold-dark: #8b6914;
+  --bg-primary: #f8f7f4;
+  --bg-secondary: #ede9e3;
+  --bg-tertiary: #e0d9ce;
+  --text-primary: #0d1b2a;
+  --text-secondary: #2d3e52;
+  --text-tertiary: #5a6b80;
+  --border-color: #d4ccc4;
+  --error-color: #c41e3a;
+  --success-color: #2d5f2e;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -94,6 +110,52 @@ body {
 
 .header a.active::after {
   width: 100%;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 12px;
+  color: var(--text-secondary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 6px;
+}
+
+.theme-toggle:hover {
+  background: rgba(201, 162, 77, 0.08);
+  color: var(--accent-gold);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.desktop-theme-toggle {
+  display: block;
+}
+
+.mobile-theme-toggle {
+  display: none;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+}
+
+.mobile-theme-toggle span {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.mobile-theme-toggle:hover {
+  background-color: var(--bg-tertiary);
 }
 
 .menu-toggle {
@@ -611,6 +673,15 @@ body {
     background-color: rgba(201, 162, 77, 0.1);
     border-left: 3px solid var(--accent-gold);
     padding-left: 21px;
+  }
+
+  .desktop-theme-toggle {
+    display: none;
+  }
+
+  .mobile-theme-toggle {
+    display: flex;
+    align-items: center;
   }
 
   .menu-toggle {
